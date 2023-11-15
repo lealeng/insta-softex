@@ -13,7 +13,7 @@ class UserPut {
       const { id } = paramsSchema.parse(req.params);
 
       const bodySchema = z.object({
-        name: z.string().nonempty().optional(),
+        name: z.string().optional(),
         password: z.string().min(6).optional(),
         bio: z.string().min(6).optional(),
         city: z.string().optional(),

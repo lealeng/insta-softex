@@ -7,6 +7,7 @@ class UserGet {
     try {
       const user = await prisma.user.findMany({
         orderBy: { id: "asc" },
+        where: { deletedAt: null },
         select: {
           id: true,
           name: true,

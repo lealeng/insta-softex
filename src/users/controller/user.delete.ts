@@ -19,8 +19,9 @@ class UserDelete {
         return res.status(400).json({ message: "User not found" });
       }
 
-      const deleteUser = await prisma.user.delete({
+      const deleteUser = await prisma.user.update({
         where: { id: parseInt(id) },
+        data: { deletedAt: new Date() },
       });
 
       if (!deleteUser) {
