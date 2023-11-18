@@ -3,7 +3,7 @@ import { prisma } from "../../lib/prisma";
 import { ZodError, z } from "zod";
 import bcrypt from "bcrypt";
 
-class UserPut {
+class UserPatch {
   async updateUser(req: Request, res: Response) {
     try {
       const paramsSchema = z.object({
@@ -57,4 +57,4 @@ class UserPut {
   }
 }
 
-export default new UserPut();
+export default new UserPatch();
