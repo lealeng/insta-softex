@@ -1,4 +1,4 @@
-import e, { Router } from "express";
+import { Router } from "express";
 import UserGet from "../controller/user.get";
 import UserPost from "../controller/user.post";
 import UserPatch from "../controller/user.patch";

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { prisma } from "../../lib/prisma";
 
 class validateJwtUser {
-  async validateJwtUser(req: Request, res: Response, next: NextFunction) {
+  async jwtUser(req: Request, res: Response, next: NextFunction) {
     try {
       const token = req.headers.authorization?.split(" ")[1];
       if (!token) {
@@ -36,6 +36,7 @@ class validateJwtUser {
           .status(401)
           .json({ message: "Not possible to authenticate" });
       }
+      return res.status(500).json({ message: "Internal server error" });
     }
   }
 }

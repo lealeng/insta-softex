@@ -11,30 +11,44 @@ datasource db {
 }
 
 model User {
-  id        Int       @id @default(autoincrement())
+  id        Int        @id @default(autoincrement())
   name      String
-  email     String    @unique
+  email     String     @unique
   password  String
   bio       String?
   city      String?
   country   String?
-  followers Int       @default(0)
-  following Int       @default(0)
-  createdAt DateTime  @default(now())
+  followers Int        @default(0)
+  following Int        @default(0)
+  createdAt DateTime   @default(now())
   updatedAt DateTime?
   deletedAt DateTime?
   Post      Post[]
+  Comments  Comments[]
 }
 
 model Post {
-  id        Int       @id @default(autoincrement())
-  published Boolean   @default(true)
+  id        Int        @id @default(autoincrement())
+  published Boolean    @default(true)
   imageUrl  String
+  label     String
+  author    User       @relation(fields: [authorId], references: [id])
+  authorId  Int
+  views     Int        @default(0)
+  likes     Int        @default(0)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime?
+  deletedAt DateTime?
+  Comments  Comments[]
+}
+
+model Comments {
+  id        Int       @id @default(autoincrement())
   author    User      @relation(fields: [authorId], references: [id])
   authorId  Int
-  comments  Json
-  views     Int       @default(0)
-  likes     Int       @default(0)
+  post      Post      @relation(fields: [postId], references: [id])
+  postId    Int
+  comment   String
   createdAt DateTime  @default(now())
   updatedAt DateTime?
   deletedAt DateTime?
