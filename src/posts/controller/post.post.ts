@@ -10,10 +10,9 @@ class PostPost {
 
       const bodySchema = z.object({
         imageUrl: z.string().url(),
-        label: z.string().nonempty(),
-        authorId: z.number(),
+        label: z.string(),
       });
-      const { imageUrl, label, authorId } = bodySchema.parse(req.body);
+      const { imageUrl, label } = bodySchema.parse(req.body);
       const post = await prisma.post.create({
         data: {
           imageUrl,
