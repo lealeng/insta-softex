@@ -5,6 +5,8 @@ import { ZodError, z } from "zod";
 class PostPatch {
   async updatePost(req: Request, res: Response) {
     try {
+      const requestingUser = res.locals.user;
+
       const paramsSchema = z.object({
         id: z.string(),
       });
@@ -24,14 +26,20 @@ class PostPatch {
         return res.status(400).json({ message: "Post not found" });
       }
 
+      if (post.authorId !== requestingUser.id) {
+        return res.status(401).json({ message: "Unauthorized" });
+      }
+
       const updatedPost = await prisma.post.update({
-        where: { id: parseInt(id) },
+        where: { id: +id },
         data: {
           label,
+          authorId: requestingUser.id,
+          updatedAt: new Date(),
         },
       });
 
-      return res.status(200).json({ message: "Post updated", updatedPost });
+      return res.status(200).json({ message: "Post updated" });
     } catch (error) {
       if (error instanceof ZodError) {
         return res

@@ -16,6 +16,7 @@ class PostGet {
               bio: true,
               city: true,
               country: true,
+              Comments: true,
             },
           },
         },
@@ -40,7 +41,7 @@ class PostGet {
       const { id } = paramsSchema.parse(req.params);
 
       const post = await prisma.post.findUnique({
-        where: { id: parseInt(id) },
+        where: { id: +id },
         include: {
           author: {
             select: {
@@ -49,6 +50,7 @@ class PostGet {
               bio: true,
               city: true,
               country: true,
+              Comments: true,
             },
           },
         },
@@ -69,4 +71,5 @@ class PostGet {
     }
   }
 }
+
 export default new PostGet();

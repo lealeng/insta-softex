@@ -20,7 +20,7 @@ class PostPost {
           authorId: requestingUser.id,
         },
       });
-      return res.status(201).json({ message: "Post created", post });
+      return res.status(201).json({ message: "Post created" });
     } catch (error) {
       if (error instanceof ZodError) {
         return res
