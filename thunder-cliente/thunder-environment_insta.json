@@ -1,0 +1,16 @@
+{
+    "client": "Thunder Client",
+    "environmentName": "insta",
+    "dateExported": "2023-11-21T05:23:02.165Z",
+    "version": "1.0",
+    "variables": [
+        {
+            "name": "baseUrl",
+            "value": "http://localhost:3333"
+        },
+        {
+            "name": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzAwNTQyMDEwLCJleHAiOjE3MDA1NDU2MTB9.hgQ78OAE2QRZdtflBPCkqM5YGRdKmEyLvAbM1jVDb98"
+        }
+    ]
+}

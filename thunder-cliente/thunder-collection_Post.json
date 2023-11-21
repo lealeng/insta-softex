@@ -1,0 +1,73 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Post",
+    "dateExported": "2023-11-21T05:22:53.757Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "592ba2c5-8d5c-4696-9595-83374a598ac6",
+            "colId": "2f540db0-313f-4b2d-be8e-21651f633ad7",
+            "containerId": "",
+            "name": "post post",
+            "url": "{{baseUrl}}/posts",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-11-20T23:44:08.182Z",
+            "modified": "2023-11-21T00:07:24.645Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"imageUrl\": \"https://fireworkweb.com.br/wp-content/uploads/2021/11/404-image.jpg\",\n  \"label\": \"Test comments\"\n  \n  }",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "043ae3ea-9586-4034-8e95-2fad7d005482",
+            "colId": "2f540db0-313f-4b2d-be8e-21651f633ad7",
+            "containerId": "",
+            "name": "get post",
+            "url": "{{baseUrl}}/posts",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-21T00:27:57.556Z",
+            "modified": "2023-11-21T03:45:11.161Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f68dc8e1-14e3-4be9-b6a8-70e383b97981",
+            "colId": "2f540db0-313f-4b2d-be8e-21651f633ad7",
+            "containerId": "",
+            "name": "patch post",
+            "url": "{{baseUrl}}/posts/1",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2023-11-21T02:08:49.631Z",
+            "modified": "2023-11-21T02:10:05.399Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"label\": \"Testando update posts\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        }
+    ]
+}

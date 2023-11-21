@@ -1,0 +1,70 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "User",
+    "dateExported": "2023-11-21T05:22:58.125Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "c1ed838c-a7c2-4c2c-887f-8866586c1db9",
+            "colId": "b4e55658-c678-47c0-8d29-5c9622cc1169",
+            "containerId": "",
+            "name": "get users",
+            "url": "http://localhost:3333/users",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-20T23:21:50.084Z",
+            "modified": "2023-11-20T23:54:50.111Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{token}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "831b10f3-3b72-4904-a7fb-076b24d83f72",
+            "colId": "b4e55658-c678-47c0-8d29-5c9622cc1169",
+            "containerId": "",
+            "name": "post login",
+            "url": "{{baseUrl}}/users/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-11-20T23:24:04.626Z",
+            "modified": "2023-11-20T23:50:40.783Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n   \"email\": \"tereza@email.com\",\n  \"password\": \"abcd1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2c6f90b1-552b-4055-9cf9-5829162164f1",
+            "colId": "b4e55658-c678-47c0-8d29-5c9622cc1169",
+            "containerId": "",
+            "name": "post users",
+            "url": "http://localhost:3333/users",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-20T23:28:28.476Z",
+            "modified": "2023-11-20T23:29:47.802Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"\",\n  \"email\": \"\",\n  \"password\": \"\",\n  \"bio\": \"\",\n  \"city\": \"\",\n  \"country\": \"\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ],
+    "settings": {
+        "options": {
+            "baseUrl": "http://localhost/3333/"
+        }
+    }
+}
