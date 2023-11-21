@@ -1,10 +1,10 @@
 import { Router } from "express";
-import UserGet from "../controller/user.get";
-import UserPost from "../controller/user.post";
-import UserPatch from "../controller/user.patch";
-import UserDelete from "../controller/user.delete";
+import UserGet from "../controllers/user.get";
+import UserPost from "../controllers/user.post";
+import UserPatch from "../controllers/user.patch";
+import UserDelete from "../controllers/user.delete";
 import authMiddleware from "../../common/middlewares/auth.middleware";
-import userAuth from "../controller/user.auth";
+import userAuth from "../controllers/user.auth";
 
 export const userRoutes = (): Router => {
   const router = Router();
