@@ -25,6 +25,7 @@ model User {
   deletedAt DateTime?
   Post      Post[]
   Comments  Comments[]
+  Likes     Likes[]
 }
 
 model Post {
@@ -40,6 +41,7 @@ model Post {
   updatedAt DateTime?
   deletedAt DateTime?
   Comments  Comments[]
+  Likes     Likes[]
 }
 
 model Comments {
@@ -48,7 +50,19 @@ model Comments {
   authorId  Int
   post      Post      @relation(fields: [postId], references: [id])
   postId    Int
-  comment   String
+  content   String
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+  deletedAt DateTime?
+}
+
+model Likes {
+  id        Int       @id @default(autoincrement())
+  liked     Boolean
+  author    User      @relation(fields: [authorId], references: [id])
+  authorId  Int
+  post      Post      @relation(fields: [postId], references: [id])
+  postId    Int
   createdAt DateTime  @default(now())
   updatedAt DateTime?
   deletedAt DateTime?
